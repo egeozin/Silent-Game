@@ -1,0 +1,28 @@
+<div id="introduce">
+
+    <div id="create-section" class="intro">
+        <h1 id="welcome">Welcome to the Game of Design.</h1>
+        <h2 class="explain">In order to start playing you need to find two other players.</h2>
+        <h3 class="suggest">If your group is ready, one of you can enter her/his name(any valid name) and create a game. Let other users join the game by sharing the code that will be printed on the top of the game page.</h3>
+        <div>
+            <input placeholder="Your Name" id="creator-name" type="text">
+            <span id='login-username-01' class="warning-login-username-1">You entered an empty string in the name field!</span>
+            <span id='login-username-02' class="warning-login-username-1"></span>
+        </div>
+        <button class="btn" id="create-button">Create</button>
+    </div>
+
+    <div id="join-section" class="intro">
+        <h3 class="suggest">If you want to participate in a game that is already initiated, enter your name and the passcode for the game:</h3>
+        <div>
+            <input placeholder="Your Name" id="participant-name" type="text">
+            <span id='login-username-2' class="warning-login-username-1">You entered an empty string in the namefield!</span>
+            <input placeholder="Passcode" id="passcode" type="text">
+            <span id='passcode-warning-1' class="warning-passcode">There are no games in the database associated with the given Passcode. Check if you have typed it wrong.</span>
+            <span id='passcode-warning-2' class="warning-passcode">Sorry the game is full.</span>
+            <span id='passcode-warning-3' class="warning-passcode">You entered an empty string in one or more ofthe fields above!</span>
+        </div>
+        <button class="btn" id="join-button">Join</button>
+    </div>
+
+</div>
