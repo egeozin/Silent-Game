@@ -1,23 +1,20 @@
 var express = require('express');
 var router = express.Router();
-//var Accounts = require('../fritterModel.js');
 var Games = require('../model/game');
 var Helper = require('./router_helper');
-//var Layer = require('../model/layer');
-//var getIP = require('ipware')().get_ip;
 var randomstring = require("randomstring");
 
 var currentUser;
 
 router.get('/', function(req, res, next){
-	//if (err) console.log(err);
 	res.redirect('/game');
-	//var player = req.query.player_type;
 	
 });
 
 router.get('/game', function(req, res){
 	if(req.session.game_id){
+		console.log("why?");
+		console.log(req.session.game_id);
 		Helper.bringGame(req.session.game_id, req.session.playerType, res);
 	} else {
 		res.json({
@@ -50,8 +47,12 @@ router.post('/join', function(req, res, next){
 router.post('/submit', function(req, res, next){
 	var submitPost = req.body;
 	var newState = JSON.parse(submitPost.newState);
-	console.log(newState);
-	Helper.submitState(submitPost.id, newState, submitPost.intent, req.session.playerType, res);
+	var confArray = JSON.parse(submitPost.confidences);
+	if (newState.length != 1){
+		Helper.submitState(submitPost.id, newState, confArray, req.session.playerType, res);
+	} else {
+		Helper.endGame(submitPost.id, newState, confArray, req.session.playerType, res);
+	}
 });
 
 router.get('/games', function (req, res) {
@@ -60,9 +61,8 @@ router.get('/games', function (req, res) {
 
 
 router.post('/logout', function(req,res){
-	console.log(logoutGet);
 	req.session.destroy();
-	//Helper.removeIf(logoutGet.id, req, res);
+	console.log("successful logout!");
 	res.json({
 		'success':true,
 		'message':"See you next time!"

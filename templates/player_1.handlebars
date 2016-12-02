@@ -1,7 +1,10 @@
 <div id="player-1">
-	<span id="radio-warning-01" class="warning-radio">No id is found!</span>
-	<span id="radio-warning-02" class="warning-radio">You need to select one intention.</span>
-	<span id="radio-warning-03" class="warning-radio">You have to find a second player!</span>
+	<div id="player1_buttons">
+	<div class = "warnings">
+		<span id="radio-warning-01" class="warning-radio">No id is found!</span>
+		<span id="radio-warning-02" class="warning-radio">You need to provide a value for each box and they should sum up to 100. Also, they should be integer.</span>
+		<span id="radio-warning-03" class="warning-radio">You have to find a second player!</span>
+	</div>
 	<ul class="selections">
 		<li>
     		<input type="radio" id="intersection" name="intent"/>
@@ -22,17 +25,19 @@
 	</ul>
 	<ul class="confidences">
 		<li>
-    		<input placeholder="Confidence" id="intersect-confidence" type="number" min="0" max="100">
+    		<input placeholder="Confidence" id="intersect-conf" type="text" pattern="[0-9]*">
 		</li>
 		<li>
-    		<input placeholder="Confidence" id="contain-confidence" type="number" min="0" max="100">
+    		<input placeholder="Confidence" id="contain-conf" type="text" pattern="[0-9]*">
 		</li>
 		<li>
-    		<input placeholder="Confidence" id="clustering-confidence" type="number" min="0" max="100">
+    		<input placeholder="Confidence" id="cluster-conf" type="text" pattern="[0-9]*">
 		</li>
 		<li>
-    		<input placeholder="Confidence" id="repetition-confidence" type="number" min="0" max="100">
+    		<input placeholder="Confidence" id="repeat-conf" type="text" pattern="[0-9]*">
 		</li>
+	</ul>
+	</div>
 	</ul>
 	<div class="general-rules">
 	<p class="rules-intro"> Rules of the Game for <span class="player_1">Player 1</span> :</p>

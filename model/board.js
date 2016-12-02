@@ -6,7 +6,7 @@ var BoardSchema = mongoose.Schema({
 	state: [ Number ],
 	player: String,
 	round: Number,
-	intent: String,
+	confidences: [ Number ] ,
 	observer_label: {type:Number, required:false},
 	created_at: {type: Date, default: Date.now}
 });
@@ -18,7 +18,7 @@ var formatBoards = function(b){
 		state: b.state,
 		player: b.player,
 		round: b.round,
-		intent: b.intent,
+		confidences: b.confidences,
 		observer_label: b.observer_label,
 	};
 }

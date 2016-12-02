@@ -1,6 +1,10 @@
-<div id="player-2">
-	<span id="radio-warning-01" class="warning-radio">No id is found!</span>
-	<span id="radio-warning-02" class="warning-radio">You need to select one intention.</span>
+<div id="player-1">
+	<div id="player1_buttons">
+	<div class = "warnings">
+		<span id="radio-warning-01" class="warning-radio">No id is found!</span>
+		<span id="radio-warning-02" class="warning-radio">You need to provide a value for each box and they should sum up to 100. Also, they should be integer.</span>
+		<span id="radio-warning-03" class="warning-radio">You have to find a second player!</span>
+	</div>
 	<ul class="selections">
 		<li>
     		<input type="radio" id="intersection" name="intent"/>
@@ -33,13 +37,13 @@
     		<input placeholder="Confidence" id="repeat-conf" type="text" pattern="[0-9]*">
 		</li>
 	</ul>
+	</div>
+	</ul>
 	<div class="general-rules">
-	<p class="rules-intro"> Rules of the Game for <span class="player_2">Player 2</span>:</p>
+	<p class="rules-intro"> Rules of the Game for <span class="player_1">Player 1</span> :</p>
 	<ul class="rules-list">
-		<li>When it's your turn, Play at most 5 cells following the intention that is assigned to you (It's at the top of the page).</li>
-		<li>Guess the Player 1's intention. State your confidence by providing a number between 0 and 100 for each of the intentions above. Don't forget: Sum of numbers must be equal to 100!</li>
-		<li>You are cooperating for this design.</li>
-		<li>Submit your response</li>
+		<li>In this final round, guess the Player 2's intention. State your confidence by providing a number between 0 and 100 for each of the intentions above. Don't forget: Sum of numbers must be equal to 100!</li>
+		<li>When you are done press the <em>Submit</em> button to move to the next turn.</li>
 	</ul>
 	</div>
 </div>

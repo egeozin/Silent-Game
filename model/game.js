@@ -5,6 +5,8 @@ var GameSchema = mongoose.Schema({
 	creator: {type: String, required: true},
 	passcode: {type: String, required: true},
 	player2: {type: String, required: false},
+	player1_intent: {type: String, required: true},
+	player2_intent: {type: String, required: true},
 	occupancy: {type:Number, default:0},
 	status:{type:String, required:false},
 	completed: {type:Boolean, default:false},

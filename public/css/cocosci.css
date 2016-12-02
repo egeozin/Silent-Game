@@ -47,6 +47,14 @@ p {
     font-family: 'Bitter', serif;
 }
 
+#goodbye {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    font-family: 'Bitter', serif;
+    text-align: center;
+}
+
 .explain {
     font-size: 3.0rem;
     line-height: 1.25;
@@ -61,12 +69,30 @@ p {
     font-family: 'Bitter', serif;
 }
 
+#farewell {
+    font-size: 3.0rem;
+    line-height: 1.25;
+    letter-spacing: 0.05rem;
+    font-family: 'Bitter', serif;
+    margin-bottom:5px;
+    text-align: center;
+}
+
+
 .suggest {
     font-size: 2.0rem; 
     line-height: 1.4; 
     letter-spacing: 0.04rem;
-    font-family: 'Bitter', serif;
     font-family:'Open Sans', sans-serif;
+}
+
+
+#final-remarks{
+    font-size: 2.0rem; 
+    line-height: 1.4; 
+    letter-spacing: 0.04rem;
+    font-family:'Open Sans', sans-serif;
+    text-align: center;    
 }
 
 #reminder {
@@ -411,8 +437,7 @@ canvas {
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-input[type="text"] {
-    width: 150px;
+input[type="text"], input[type="number"] {
     height: 38px;
     padding: 0px 10px;
     background-color: #EFEFEF;
@@ -425,10 +450,27 @@ input[type="text"] {
 
 }
 
-input[type="text"]:focus {
+/*
+
+input[type="text"] {
+    width: 150px;
+}*/
+
+input[type=number] {-moz-appearance: textfield;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+input[type="text"]:focus, input[type="number"]:focus {
     border: 2px solid #565656;
     outline: 0;
 }
+
 
 label {
     display:block;
@@ -451,23 +493,23 @@ label {
     padding:0px;
 }
 
-#intersect-confidence {
+#intersect-conf {
     width: 146px;
     text-decoration: none;
     border-radius: 0px;
 }
 
-#contain-confidence {
+#contain-conf {
     width: 138px;
     border-radius: 0px;
 }
 
-#clustering-confidence {
+#cluster-conf {
     width: 126px;
     border-radius: 0px;
 }
 
-#repetition-confidence {
+#repeat-conf {
     width: 126px;
     border-radius: 0px;
 }
@@ -504,7 +546,13 @@ label {
     line-height: 1.4; 
     letter-spacing: 0rem;
     font-family: 'Bitter', serif;
+    margin-top:8px;
     margin-bottom: 10px;
+    display:block;
+}
+
+#intention-reminder {
+    margin-top: -8px;
 }
 
 textarea {
@@ -550,9 +598,11 @@ textarea:focus {
 
 
 .nav ul li {
+  color: #565656;
   display: inline ;
   vertical-align: middle;
   margin: 5px 0px 0 10px ;
+  cursor:pointer;
   }
 
 .nav ul li:nth-child(1) {
@@ -591,5 +641,9 @@ textarea:focus {
 
 .nav a:hover {
   text-decoration: underline;}
+}
+
+#logout-button {
+    cursor: pointer;
 }
 
