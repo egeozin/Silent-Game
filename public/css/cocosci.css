@@ -433,6 +433,21 @@ canvas {
     margin-bottom:20px;
 }
 
+#boards-list {
+    padding:0px;
+    display:inline-block;
+}
+
+.smallBoard {
+    margin:auto;
+    width: 256px;
+    height:256px;
+    border: 1px solid #565656;
+    display:block;
+    margin-bottom:20px;
+    margin-right:10px;
+}
+
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -646,4 +661,14 @@ textarea:focus {
 #logout-button {
     cursor: pointer;
 }
+
+#games-list-button {
+    cursor: pointer;
+}
+
+.games-list-item {
+    cursor: pointer;
+}
+
+
 

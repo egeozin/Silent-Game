@@ -46,7 +46,19 @@ var Helper = function() {
 		player: b.player,
 		round: b.round
 	};
-}
+	}
+
+	var formatBoards = function(b){
+	return {
+		_id: b._id,
+		state: b.state,
+		player: b.player,
+		round: b.round,
+		confidences: b.confidences,
+	};
+	}
+
+
 
 
 	that.joinGame = function(passcode, player, req, res){
@@ -231,44 +243,7 @@ var Helper = function() {
 		})
 	};
 
-	that.bringGame = function(id, type, res) {
-		Game.findOne({'_id':id}).populate('states').select({"states": {"$slice": -1}}).exec(function(err, game){
-			Board.findOne({'_id': game.states[0]._id}).select('state player round').exec(function(err, board){
-				if(err) {
-					console.log('error in bringing the game!');
-					res.json({
-							'success':false,
-							'message':'Error in bringing the game'
-					})
-				} else {
-					console.log('success in bringing the game!');
-					if (board.player == 'player_1' ) {
-						game.turn = board.round;
-						res.json({
-							'success':true,
-							'game': [game].map(formatCreateGame),
-							'playerType': type,
-							'board': board.state,
-							'round': board.round,
-							'roundPlayer': "player_2"
-						}) } 
-					if (board.player == 'player_2' || board.player == '') {
-						game.turn = board.round;
-						res.json({
-							'success':true,
-							'game': [game].map(formatCreateGame),
-							'playerType': type,
-							'board': board.state,
-							'round': board.round,
-							'roundPlayer': "player_1"
-					})
 
-					}
-				}
-
-			});
-		});
-	};
 
 
 	that.endGame = function(id, state, confArray, type, res){
@@ -351,6 +326,71 @@ var Helper = function() {
 					});
 				}
 			});
+	};
+
+	that.bringGame = function(id, type, res) {
+		Game.findOne({'_id':id}).populate('states').select({"states": {"$slice": -1}}).exec(function(err, game){
+			Board.findOne({'_id': game.states[0]._id}).select('state player round').exec(function(err, board){
+				if(err) {
+					console.log('error in bringing the game!');
+					res.json({
+							'success':false,
+							'message':'Error in bringing the game'
+					})
+				} else {
+					console.log('success in bringing the game!');
+					if (board.player == 'player_1' ) {
+						game.turn = board.round;
+						res.json({
+							'success':true,
+							'game': [game].map(formatCreateGame),
+							'playerType': type,
+							'board': board.state,
+							'round': board.round,
+							'roundPlayer': "player_2"
+						}) } 
+					if (board.player == 'player_2' || board.player == '') {
+						game.turn = board.round;
+						res.json({
+							'success':true,
+							'game': [game].map(formatCreateGame),
+							'playerType': type,
+							'board': board.state,
+							'round': board.round,
+							'roundPlayer': "player_1"
+					})
+
+					}
+				}
+
+			});
+		});
+	};
+
+
+	that.bringBoards = function(id, res) {
+		Game.findOne({'_id':id}).populate('states').select('passcode states player1_intent player2_intent').exec(function(err, game){
+			if(err) {
+				console.log('error in bringing the game!');
+				res.json({
+						'success':false,
+						'message':'Error in bringing the game'
+				})
+			} else {
+				console.log('success in bringing the boards!');
+				console.log(game);
+				var states = game.states;
+				res.json({
+					'success':true,
+					'passcode':game.passcode,
+					'_id':game._id,
+					'boards': states.map(formatBoards),
+					'player1_int': game.player1_intent,
+					'player2_int': game.player2_intent
+				})
+
+			}
+		})
 	};
 
 

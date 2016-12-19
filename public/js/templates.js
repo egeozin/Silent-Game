@@ -1,7 +1,33 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['analysis_session'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "\n<div id=\"game-field\" data-id=\""
+    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
+    + "\">\n\n	<h2 class=\"explain\" id=\"game-name\">This is game: <span id=\"passcode-copy\">"
+    + alias4(((helper = (helper = helpers.passcode || (depth0 != null ? depth0.passcode : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"passcode","hash":{},"data":data}) : helper)))
+    + "<span></h2>\n	<h3 class=\"suggest\">Player 1's intention was: "
+    + alias4(((helper = (helper = helpers.player1_int || (depth0 != null ? depth0.player1_int : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"player1_int","hash":{},"data":data}) : helper)))
+    + "</h3>\n	<h3 class=\"suggest\">Player 2's intention was: "
+    + alias4(((helper = (helper = helpers.player2_int || (depth0 != null ? depth0.player2_int : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"player2_int","hash":{},"data":data}) : helper)))
+    + "</h3>\n\n	<div id=\"boards-list\">\n\n	</div>\n\n	<div class=\"rules\" id=\"player_info\">\n		\n	</div>\n\n</div>";
+},"useData":true});
 templates['board'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div id=\"board\"></div>";
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div id=\"board_in_"
+    + alias4(((helper = (helper = helpers.round || (depth0 != null ? depth0.round : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"round","hash":{},"data":data}) : helper)))
+    + "\" class=\"smallBoard\"></div>\n<h3 class=\"suggest\">Turn:"
+    + alias4(((helper = (helper = helpers.round || (depth0 != null ? depth0.round : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"round","hash":{},"data":data}) : helper)))
+    + "</h3>\n<h3 class=\"suggest\">Player:"
+    + alias4(((helper = (helper = helpers.player || (depth0 != null ? depth0.player : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"player","hash":{},"data":data}) : helper)))
+    + "</h3>\n<h3 class=\"suggest\">Confidences:"
+    + alias4(((helper = (helper = helpers.confidences || (depth0 != null ? depth0.confidences : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"confidences","hash":{},"data":data}) : helper)))
+    + "</h3>";
+},"useData":true});
+templates['boards_list'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div id=\"boards-list\"></div>";
 },"useData":true});
 templates['end_game_remarks'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "    <div id=\"end-section\" class=\"intro\">\n        <h1 id=\"goodbye\">Thank you for participating in our game.</h1>\n        <h2 id=\"farewell\">Your contribution will help us to design a computational model that will try to predict players' intentions.</h2>\n        <h3 id=\"final-remarks\">Check this webpage after two weeks to see a comparison of human predictions and our model's predictions.</h3>\n   </div>";
@@ -9,13 +35,13 @@ templates['end_game_remarks'] = template({"compiler":[7,">= 4.0.0"],"main":funct
 templates['game'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"games-list_item\" data-id=\""
-    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-    + "\">\n	<button type=\"button\" class=\"close\">&times;</button>\n    <p class=\"creator\">"
-    + alias4(((helper = (helper = helpers.creator || (depth0 != null ? depth0.creator : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"creator","hash":{},"data":data}) : helper)))
-    + "</p>\n	<p class=\"description\">"
+  return "<button id=\""
     + alias4(((helper = (helper = helpers.passcode || (depth0 != null ? depth0.passcode : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"passcode","hash":{},"data":data}) : helper)))
-    + "</p>\n</div>\n";
+    + "\" data-id=\""
+    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
+    + "\" class=\"games-list-item\">"
+    + alias4(((helper = (helper = helpers.passcode || (depth0 != null ? depth0.passcode : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"passcode","hash":{},"data":data}) : helper)))
+    + "</a> ";
 },"useData":true});
 templates['game_session'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;

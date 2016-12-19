@@ -102,26 +102,51 @@ $(document).ready(function(){
 		}
 	});
 
-  /*
-  $.get('/games', function(resp){
-    if(resp.success){
-      var gamesList = Handlebars.templates.games(resp);
-      $(".container").empty();
-      $(".container").append(gamesList);
-    } else {
-        console.log(resp.message);
-    }
+
+  $(document).on('click', '#games-list-button', function(){
+    $.get('/games', function(resp) {
+        if (resp.success) {
+          var gamesListHtml = Handlebars.templates.games_list();
+          var gamesHtml = Handlebars.templates.games(resp);
+          $(".container").empty()
+          $(".container").append(gamesListHtml);
+          $("#games-list").append(gamesHtml);
+        } else {
+          console.log(resp.message);
+        }
+    });
   });
 
-  $.get('/logout', {}, function(resp){
-    if(resp.success){
-      var mainPage = Handlebars.templates.main();
-      $(".container").empty();
-      $(".container").append(mainPage);
-    } else {
+
+  $(document).on('click', '.games-list-item', function(){
+    var id= $(this).data('id')
+    console.log(id);
+    $.post('/boards', {id:id}, function(resp) {
+      if (resp.success) {
+        var analysisHtml = Handlebars.templates.analysis_session(resp);
+        $(".container").empty();
+        $(".container").append(analysisHtml);
+        var boards = resp.boards;
+        console.log(boards);
+        for (i = 1; i < boards.length-1; i++){
+          var dataForD3 = {state:boards[i].state};
+          var jsonForBoard = {round:boards[i].round, player:boards[i].player, confidences:boards[i+1].confidences.toString()};
+          var boardHtml = Handlebars.templates.board(jsonForBoard);
+          console.log(boardHtml);
+          $("#boards-list").append(boardHtml);
+          AnalysisWidget_install(dataForD3, boards[i].round);
+        }
+        
+      } else {
+        $(".container").empty();
+        var mainPage = Handlebars.templates.main();
+        $(".container").append(mainPage);
         console.log(resp.message);
-    }
-  }); */
+      }
+
+    });
+
+  });
 
 
 	$(document).on('click', '#create-button',function() {

@@ -55,10 +55,17 @@ router.post('/submit', function(req, res, next){
 	}
 });
 
+//TODO FOR ANALYSIS
 router.get('/games', function (req, res) {
 	Games.getGames(res);
 });
 
+//TODO FOR ANALYSIS
+router.post('/boards', function(req, res) {
+	var boardsPost = req.body;
+	console.log(boardsPost.id);
+	Helper.bringBoards(boardsPost.id, res);
+})
 
 router.post('/logout', function(req,res){
 	req.session.destroy();
