@@ -1,6 +1,3 @@
-/* Part of the code has been adapted from the Chuck Grimmet's "Let's Make a Grid with D3.js" example in bl.ocks.org.
- *
- */
 
 /* Stuff that I brought up from my previous implementation
  * We are reading from a JSON object that looks like:

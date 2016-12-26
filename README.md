@@ -1,6 +1,6 @@
 
-9.660 Computational Cognitive Science Final Project
-Ege Ozgirin and Dishita Turakhia
+9.660 Computational Cognitive Science class Final Project by
+Ege Ozgirin and Dishita Turakhia, 2016
 
 The link for the game: https://design-game.herokuapp.com
 
