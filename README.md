@@ -4,6 +4,8 @@ Ege Ozgirin and Dishita Turakhia
 
 The link for the game: https://design-game.herokuapp.com
 
+	This project is designed with: Node + Express + Mongo + D3 + Handlebars .
+
 # The Silent Game
 ### Understanding Visual and Social Cognition
 
@@ -67,7 +69,7 @@ The figure below shows change in confidence levels from a sample of successful g
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 
 
