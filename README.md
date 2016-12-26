@@ -4,7 +4,13 @@ Ege Ozgirin and Dishita Turakhia
 
 The link for the game: https://design-game.herokuapp.com
 
-	This project is designed with: Node + Express + Mongo + D3 + Handlebars .
+	This project is designed with: 
+
+	Node.js as Javascript runtime environment + 
+	Express as web framework for Node.js + 
+	Mongo for database + 
+	D3 for board interface, board visualizations and plots + 
+	Handlebars as template library .
 
 # The Silent Game
 ### Understanding Visual and Social Cognition
