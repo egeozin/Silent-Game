@@ -1,9 +1,5 @@
-/*Part of the code has been adapted from the Chuck Grimmet's "Let's Make a Grid with D3.js" example in bl.ocks.org.
- *
- */
 
-/* Stuff that I brought up from my previous implementation
- * We are reading from a JSON object that looks like:
+/* This function reads from a JSON object that looks like:
  * {state: [1, 0, 2, 1, 0 ... ,2, 0], playerType: 'player_1'} or [1, 2, 0, 0, 2, 1 .. 1]
  * 0 for empty, 1 for player_1 move and 2 for player_2 move
  * with array.length = 256 
@@ -18,6 +14,7 @@ var GameWidget_install =  function(dataJSON) {
 	var newState = oldState;
 	var remainClick = 5;
 	var prohibited = dataJSON.prohibited;
+
 	/* 
 	 * Board Data will be updated with every model call,
 	 * It's good that we can update the field of an object
