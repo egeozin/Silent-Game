@@ -9,7 +9,7 @@ The link for the game: https://design-game.herokuapp.com
 
 The vision of this study is to understand human social cognition through graphical communication. In order to study these two aspects of human behavior, we designed an experiment called silent game where two players communicate their goals to each other through graphical interface/board. We documented and tracked the changing beliefs of players of other player’s goals based on observation and rational analysis of graphical board at the end of each move. We then designed a computational agent using Bayesian models of inference and documented the inferences developed by that model against the game data collected. The goal of this study was not only to understand human behavior of social cognition and visual cognition, but also test how close can Bayesian computational models get to human-like thinking and intuition development. In short, we wanted to test if computational models develop an abstract understanding of people’s intentions based on visual data?
 
-<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/G3-P2.4.png" width="300"></p>
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/G3-P2.4.png" width="250"></p>
 
 ## The Game
 
@@ -41,7 +41,33 @@ If you are player 2:
 
 	"You first numerically guess your confidence levels of what the other player’s goal might be, and then play your own turn."
 
+Finally:
+
 	"In order to win this game, both players have to successfully guess each others’ intention - otherwise both players lose the game."
+
+
+### Examples
+
+Shown in figure below is an example of a game where player 1’s (in blue) intention was *repetition* and player 2’s (in green) intention was *cluster*. The figure shows turn wise progress of the game and the chart below shows the change in the confidence levels of opponent’s beliefs based on player’s actions. This game was successful in terms of communication, with high confidence in accurate guesses.
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/boards_1.jpg" width="600"></p>
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_1_2_confidences.jpg" width="500"></p>
+
+The next example has player 1’s intention as *cluster* and player 2’s intention as *intersection*. In this game, both players were unable to guess the other player’s intentions.
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/boards_2.jpg" width="600"></p>
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_4_confidences.jpg" width="500"></p>
+
+The figure below shows change in confidence levels from a sample of successful games.
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_6_7_10_11_confidences.jpg" width="800"></p>
+
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
 
