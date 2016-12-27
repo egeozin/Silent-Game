@@ -58,15 +58,15 @@ Finally:
 
 Shown in figure below is an example of a game where player 1’s (in blue) intention was *repetition* and player 2’s (in green) intention was *cluster*. The figure shows turn wise progress of the game and the chart below shows the change in the confidence levels of opponent’s beliefs based on player’s actions. This game was successful in terms of communication, with high confidence in accurate guesses.
 
-<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/boards_1.jpg" width="600"></p>
-
-<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_1_2_confidences.png" width="500"></p>
-
-The next example has player 1’s intention as *cluster* and player 2’s intention as *intersection*. In this game, both players were unable to guess the other player’s intentions.
-
 <p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/boards_2.jpg" width="600"></p>
 
 <p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_4_confidences.png" width="500"></p>
+
+The next example has player 1’s intention as *cluster* and player 2’s intention as *intersection*. In this game, both players were unable to guess the other player’s intentions.
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/boards_1.jpg" width="600"></p>
+
+<p align="center"><img src="https://github.mit.edu/egeozin/Silent-Game/blob/master/images/Game_1_2_confidences.png" width="500"></p>
 
 The figure below shows change in confidence levels from a sample of successful games.
 
