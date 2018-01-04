@@ -21,9 +21,7 @@ router.get('/game', function(req, res){
 			'success': false,
 			'message':'join or create a game!'
 		})
-
 	}
-
 
 });
 
